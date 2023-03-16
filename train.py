@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 # Set random seed
-seed = 42
+seed = 123
 
 
 ################################
@@ -13,7 +13,7 @@ seed = 42
 ################################
 
 # Load in the data
-df = pd.read_csv("wine_quality.csv")
+df = pd.read_csv("data/wine_quality.csv")
 
 # Split into train and test sections
 y = df.pop("quality")
@@ -59,7 +59,7 @@ ax.set_ylabel('Feature', fontsize = axis_fs)#ylabel
 ax.set_title('Random forest\nfeature importance', fontsize = title_fs)
 
 plt.tight_layout()
-plt.savefig("feature_importance_v1.png",dpi=120)
+plt.savefig("data/feature_importance_v1.png",dpi=120)
 plt.close()
 
 
@@ -83,4 +83,4 @@ plt.ylim((2.5,8.5))
 plt.xlim((2.5,8.5))
 
 plt.tight_layout()
-plt.savefig("residuals.png",dpi=120)
+plt.savefig("data/residuals.png",dpi=120)
