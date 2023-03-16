@@ -1,0 +1,2 @@
+# try-git-action
+trygitaction
