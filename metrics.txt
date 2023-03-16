@@ -1,0 +1,3 @@
+Metric of Results:
+Training variance explained: 69.1%
+Test variance explained: 47.8%

@@ -1,0 +1,22 @@
+name: Run-Model-Wine-Quality-Traing
+run-name: ${{ github.actor }} is running training model 🚀
+on: [push]
+jobs:
+  Run-Training-Model:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - uses: iterative/setup-cml@v1
+      - name: Train model
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install -r requirements.txt
+          python train.py
+
+          cat requirements.txt >> report.md
+          cat metrics.txt >> report.md
+          echo "![](./feature_importance_v1.png)" >> report.md
+          echo "![](./residuals.png)" >> report.md
+          cml comment create report.md
