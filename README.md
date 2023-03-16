@@ -1,2 +1,3 @@
 # try-git-action
-trygitaction
+try git action for the first time. CI done.
+
